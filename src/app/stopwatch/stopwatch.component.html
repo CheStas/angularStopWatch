@@ -1,0 +1,15 @@
+<app-display [time]="toDisplayLap" [hidden]="toDisplayLap === '00:00:00:000'"></app-display>
+<app-display [time]="toDisplay"></app-display>
+<div class="buttonWrap">
+    <button (click)="toggleStopWatch()" [innerHTML]="isOn ? 'Pause' : time ? 'Resume' : 'Start'"></button>
+    <button (click)="lap()" [disabled]="!isOn">Lap</button>
+    <button (click)="reset()" [disabled]="isOn">Reset</button>
+</div>
+<div [hidden]="lapInfo.avg === '00:00:00:000'" class="avarage">avarage lap: {{lapInfo.avg}}</div>
+<ol reversed>
+    <li *ngFor="let lap of laps">
+        <strong>{{lap.current}}</strong>
+        <span [className]="lap.colorAvg[0] === '-' ? 'green' : 'red'">avg: {{lap.colorAvg}}</span>
+        <span [className]="lap.colorPrev[0] === '-' ? 'green' : 'red'">prev: {{lap.colorPrev}}</span>
+    </li>
+</ol>

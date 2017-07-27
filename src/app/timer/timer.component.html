@@ -1,0 +1,9 @@
+<app-display [time]="toDisplay"></app-display>
+<div class="setTime">
+    <p>set time in minutes:</p>
+    <input type="number" #timerMinutes [(ngModel)]="time" (ngModelChange)="changeTime(timerMinutes.value)" [disabled]="offset">
+</div>
+<div class="buttonWrap">
+    <button (click)="toggleTimer()" [innerHTML]="isOn ? 'Pause' : offset ? 'Resume' : 'Start'"></button>
+    <button (click)="reset()" [disabled]="isOn">Reset</button>
+</div>

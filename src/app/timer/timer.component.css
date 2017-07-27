@@ -1,0 +1,31 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    color: #8f8f88;
+}
+
+.buttonWrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+button {
+    flex: 50%;
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.setTime {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setTime input {
+    height: 20px;
+    width: 100px;
+    background-color: #ececec;
+    outline: none;
+}

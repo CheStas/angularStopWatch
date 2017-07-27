@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: #8f8f88;
+}
+
+.buttonWrap {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+button {
+    flex: 33%;
+    margin: 20px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.avarage {
+    font-size: 18px;
+}
+
+li {
+    text-align: center;
+    margin: 20px;
+}
+
+li strong {
+    display: block;
+}
+
+.red {
+    color: #822c2c;
+}
+
+.green {
+    color: #186f18;
+}
