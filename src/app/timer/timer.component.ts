@@ -10,8 +10,6 @@ export class TimerComponent implements OnInit {
 
   constructor(private appService: AppService ) { }
 
-  ngOnInit() { }
-
   toDisplay = '00:05:00:000';
   offset = 0;
   timeOffset;
@@ -20,29 +18,31 @@ export class TimerComponent implements OnInit {
   timeMili = 1;
   interval;
 
-  toggleTimer():void {
+  ngOnInit() { }
 
-      if(!this.isOn) {
+  toggleTimer(): void {
+
+      if (!this.isOn) {
 
           this.isOn = true;
 
-          if(this.offset === 0) {
+          if (this.offset === 0) {
               this.timeOffset = Date.now();
               this.timeMili = this.time * 60000;
           }
 
-          this.interval = setInterval(()=>{
-              if (this.timeMili > 0){
+          this.interval = setInterval(() => {
+              if (this.timeMili > 0) {
                   this.offset = Date.now() - this.timeOffset;
                   this.timeOffset = Date.now();
                   this.timeMili = this.timeMili - this.offset;
-                  this.toDisplay = this.appService.beautyTime(this.timeMili)
+                  this.toDisplay = this.appService.beautyTime(this.timeMili);
               } else {
                   clearInterval(this.interval);
                   this.isOn = false;
                   this.reset();
               }
-         }, 10)
+         }, 10);
 
       } else {
           clearInterval(this.interval);
@@ -50,14 +50,14 @@ export class TimerComponent implements OnInit {
       }
   }
 
-  reset():void {
+  reset(): void {
       this.toDisplay = '00:05:00:000';
       this.offset = 0;
       this.time = 5;
-      this.timeMili = 1
+      this.timeMili = 1;
   }
 
-  changeTime(time):void {
+  changeTime(time): void {
       this.toDisplay = this.appService.beautyTime(time * 60000);
   }
 }

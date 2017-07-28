@@ -7,7 +7,7 @@ import { Component, Input, OnChanges} from '@angular/core';
 })
 export class DisplayComponent implements OnChanges {
 
-    @Input() time:string;
+    @Input() time: string;
 
     ngOnChanges() {}
 }

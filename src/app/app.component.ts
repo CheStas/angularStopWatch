@@ -10,7 +10,7 @@ export class AppComponent {
   timerHidden = true;
   stopWatchHidden = true;
 
-  changeTab(tab: string):void {
+  changeTab(tab: string): void {
       if (tab === 'time' && this.timeHidden === true) {
           this.timeHidden = false;
           this.timerHidden = true;

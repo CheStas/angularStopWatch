@@ -4,13 +4,14 @@ import { Injectable } from '@angular/core';
 export class AppService {
 
     beautyTime(t: number): string {
-        let d = new Date(t);
-        return this.addZeroToNum(d.getUTCHours()) + ":" + this.addZeroToNum(d.getUTCMinutes()) + ":" + this.addZeroToNum(d.getUTCSeconds()) + ':' + this.addZeroToMilisec(d.getUTCMilliseconds());
+        const d = new Date(t);
+        return this.addZeroToNum(d.getUTCHours()) + ':' + this.addZeroToNum(d.getUTCMinutes()) +
+        ':' + this.addZeroToNum(d.getUTCSeconds()) + ':' + this.addZeroToMilisec(d.getUTCMilliseconds());
     }
 
     beautyTimeLocal(t: number): string {
-        let d = new Date(t);
-        return this.addZeroToNum(d.getHours()) + ":" + this.addZeroToNum(d.getMinutes()) + ":" + this.addZeroToNum(d.getSeconds());
+        const d = new Date(t);
+        return this.addZeroToNum(d.getHours()) + ':' + this.addZeroToNum(d.getMinutes()) + ':' + this.addZeroToNum(d.getSeconds());
     }
 
     private addZeroToNum(num: number): string {
